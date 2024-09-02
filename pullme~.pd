@@ -1,4 +1,4 @@
-#N canvas 685 52 679 692 12;
+#N canvas 685 37 679 692 12;
 #N canvas -8 -8 1366 685 peaks 0;
 #N canvas -8 -8 1366 685 peak 0;
 #X obj 112 70 unpack 0 0 0 0, f 18;
@@ -1475,21 +1475,17 @@
 #X obj 851 243 t b f, f 17;
 #X obj 851 267 random 100;
 #X obj 851 291 * 0.01;
-#X obj 101 101 cnv 15 195 145 empty \$0-text empty 20 12 0 14 -262144
--1 0;
+#X obj 101 101 cnv 15 195 145 empty \$0-text empty 20 12 0 14 #fcfcfc #000000 0;
 #X obj 417 87 r \$0-res;
-#X obj 106 106 bng 10 250 50 0 \$0-pull \$0-pull-r empty 17 7 0 10
--262144 -1 -1;
-#X obj 106 221 bng 10 250 50 0 \$0-random-gain-tab \$0-random-gain-tab-r
-random 15 4 0 10 -262144 -1 -1;
+#X obj 106 106 bng 10 250 50 0 \$0-pull \$0-pull-r empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 106 221 bng 10 250 50 0 \$0-random-gain-tab \$0-random-gain-tab-r random 15 4 0 10 #fcfcfc #000000 #000000;
 #X obj 361 199 inlet~;
 #X obj 417 276 outlet~;
 #X obj 598 32 inlet;
 #N canvas 914 35 449 708 route-inlet-messages 0;
 #X obj 12 31 inlet;
 #X obj 196 519 r \$0-error;
-#X obj 196 543 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 196 543 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 464 215 s \$0-error;
 #N canvas 676 0 681 676 state 0;
 #X obj 66 30 inlet;
@@ -1509,10 +1505,7 @@ random 15 4 0 10 -262144 -1 -1;
 #X obj 193 83 r \$0-delay-max;
 #X obj 154 131 r \$0-lerp-delay;
 #X obj 54 170 pack f f f f f f s s, f 34;
-#X msg 54 199 add2 res \$1 \, addcomma \, add2 lerp gain \$2 \, addcomma
-\, add2 lerp pitch \$3 \, addcomma \, add2 lerp delay \$4 \, addcomma
-\, add2 delay \$5 \, addcomma \, add2 transp \$6 \, addcomma \, add2
-load gain \$7 \, addcomma \, add2 load delay \$8;
+#X msg 54 199 add2 res \$1 \, addcomma \, add2 lerp gain \$2 \, addcomma \, add2 lerp pitch \$3 \, addcomma \, add2 lerp delay \$4 \, addcomma \, add2 delay \$5 \, addcomma \, add2 transp \$6 \, addcomma \, add2 load gain \$7 \, addcomma \, add2 load delay \$8;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 3 0 0 1;
@@ -1579,8 +1572,7 @@ load gain \$7 \, addcomma \, add2 load delay \$8;
 #X connect 2 1 3 0;
 #X connect 2 2 4 0;
 #X restore 351 131 pd load;
-#X obj 12 71 route bang res lerp delay transp random load state, f
-65;
+#X obj 12 71 route bang res lerp delay transp random load state, f 65;
 #X msg 78 181 set \$1;
 #X obj 78 206 s \$0-res-r;
 #X obj 68 231 s \$0-res;
@@ -1615,10 +1607,8 @@ load gain \$7 \, addcomma \, add2 load delay \$8;
 #X restore 598 61 pd route-inlet-messages;
 #X obj 599 276 outlet;
 #X obj 599 252 r \$0-state;
-#X obj 179 221 bng 10 250 50 0 \$0-save-gain-tab empty sv 1 17 0 10
--262144 -1 -1;
-#X obj 163 221 bng 10 250 50 0 \$0-load-gain-tab empty ld -1 17 0 10
--262144 -1 -1;
+#X obj 179 221 bng 10 250 50 0 \$0-save-gain-tab empty sv 1 17 0 10 #fcfcfc #000000 #000000;
+#X obj 163 221 bng 10 250 50 0 \$0-load-gain-tab empty ld -1 17 0 10 #fcfcfc #000000 #000000;
 #N canvas 3 35 1360 708 save-load 0;
 #X obj 468 319 soundfiler;
 #X obj 468 223 openpanel;
@@ -1723,20 +1713,16 @@ load gain \$7 \, addcomma \, add2 load delay \$8;
 #X array \$0-delay-tab 16 float 2;
 #X coords 0 1 16 0 90 50 1 0 0;
 #X restore 201 166 graph;
-#X obj 202 167 cnv 15 88 48 empty \$0-text empty 20 12 0 14 -262144
--1 0;
+#X obj 202 167 cnv 15 88 48 empty \$0-text empty 20 12 0 14 #fcfcfc #000000 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-gains 16 float 2;
+#X array \$0-gains 16 float 3;
+#A 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1;
 #X coords 0 1 16 0 90 50 1 0 0;
 #X restore 106 166 graph;
-#X obj 107 167 cnv 15 88 48 empty \$0-text empty 20 12 0 14 -262144
--1 0;
-#X obj 201 221 bng 10 250 50 0 \$0-random-delay-tab \$0-random-delay-tab-r
-random 15 4 0 10 -262144 -1 -1;
-#X obj 274 221 bng 10 250 50 0 \$0-save-delay-tab empty sv 1 17 0 10
--262144 -1 -1;
-#X obj 258 221 bng 10 250 50 0 \$0-load-delay-tab empty ld -1 17 0
-10 -262144 -1 -1;
+#X obj 107 167 cnv 15 88 48 empty \$0-text empty 20 12 0 14 #fcfcfc #000000 0;
+#X obj 201 221 bng 10 250 50 0 \$0-random-delay-tab \$0-random-delay-tab-r random 15 4 0 10 #fcfcfc #000000 #000000;
+#X obj 274 221 bng 10 250 50 0 \$0-save-delay-tab empty sv 1 17 0 10 #fcfcfc #000000 #000000;
+#X obj 258 221 bng 10 250 50 0 \$0-load-delay-tab empty ld -1 17 0 10 #fcfcfc #000000 #000000;
 #X obj 1005 147 until;
 #X msg 1005 123 16;
 #X obj 1005 195 f;
@@ -1748,35 +1734,23 @@ random 15 4 0 10 -262144 -1 -1;
 #X obj 1005 267 random 100;
 #X obj 1005 291 * 0.01;
 #X obj 1005 315 tabwrite \$0-delay-tab;
-#X obj 252 126 nbx 1 15 1 7 0 0 \$0-res \$0-res-r res 23 8 0 10 -1
--262144 -1 1 256;
-#X obj 147 124 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 -262144 -1
-0;
-#X obj 106 126 nbx 3 15 0 1e+37 0 0 \$0-lerp-gain \$0-lerp-gain-r gain
-41 12 0 10 -1 -262144 -1 0 256;
-#X obj 217 124 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 -262144 -1
-0;
-#X obj 176 126 nbx 3 15 0 1e+37 0 0 \$0-lerp-pitch \$0-lerp-pitch-r
-pitch 41 12 0 10 -1 -262144 -1 0 256;
-#X obj 106 150 cnv 14 70 14 empty \$0-text empty 20 12 0 14 -262144
--1 0;
-#X obj 106 146 nbx 3 15 -1e+37 1e+37 0 0 \$0-transp \$0-transp-r transp.
-41 8 0 10 -1 -262144 -1 0 256;
-#X obj 216 104 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 -262144 -1
-0;
-#X obj 176 106 nbx 3 15 0 1e+37 0 0 \$0-lerp-delay \$0-lerp-delay-r
-del 41 12 0 10 -1 -262144 -1 0 256;
+#X obj 252 126 nbx 1 15 1 7 0 0 \$0-res \$0-res-r res 23 8 0 10 #000000 #fcfcfc #000000 0 256;
+#X obj 147 124 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 #fcfcfc #000000 0;
+#X obj 106 126 nbx 3 15 0 1e+37 0 0 \$0-lerp-gain \$0-lerp-gain-r gain 41 12 0 10 #000000 #fcfcfc #000000 0 256;
+#X obj 217 124 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 #fcfcfc #000000 0;
+#X obj 176 126 nbx 3 15 0 1e+37 0 0 \$0-lerp-pitch \$0-lerp-pitch-r pitch 41 12 0 10 #000000 #fcfcfc #000000 0 256;
+#X obj 106 150 cnv 14 70 14 empty \$0-text empty 20 12 0 14 #fcfcfc #000000 0;
+#X obj 106 146 nbx 3 15 -1e+37 1e+37 0 0 \$0-transp \$0-transp-r transp. 41 8 0 10 #000000 #fcfcfc #000000 0 256;
+#X obj 216 104 cnv 15 20 10 empty \$0-text lerp 0 5 0 10 #fcfcfc #000000 0;
+#X obj 176 106 nbx 3 15 0 1e+37 0 0 \$0-lerp-delay \$0-lerp-delay-r del 41 12 0 10 #000000 #fcfcfc #000000 0 256;
 #X obj 1005 74 r \$0-random-delay-tab;
 #X obj 851 74 r \$0-random-gain-tab;
 #N canvas -8 -8 1366 685 help 0;
-#X obj 38 150 cnv 15 560 389 empty empty empty 20 12 0 14 -203904 -66577
-0;
-#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 -203904 -66577
-0;
+#X obj 38 150 cnv 15 560 389 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
+#X obj 38 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4c4fc #404040 0;
 #X obj 48 81 sig~;
 #X text 35 47 INLET 0:;
-#X obj 658 71 cnv 15 134 39 empty empty empty 20 12 0 14 -204800 -66577
-0;
+#X obj 658 71 cnv 15 134 39 empty empty empty 20 12 0 14 #c4fcfc #404040 0;
 #X obj 668 81 sig~;
 #X text 655 47 OUTLET 0:;
 #X text 35 126 INLET 1:;
@@ -1791,37 +1765,20 @@ del 41 12 0 10 -1 -262144 -1 0 256;
 #X obj 48 166 bang;
 #X text 88 81 canal mono;
 #X text 708 81 canal mono;
-#X obj 659 150 cnv 15 499 105 empty empty empty 20 12 0 14 -204800
--66577 0;
+#X obj 659 150 cnv 15 499 105 empty empty empty 20 12 0 14 #c4fcfc #404040 0;
 #X msg 669 166 set foo;
 #X text 656 126 OUTLET 2:;
-#X text 730 159 donde foo representa una lista de todos los parámetros
-correctamente formateados para ser enviados de vuelta a la abstracción
-\, en otras palabras \, conectar esta salida a un mensaje y cuando
-la abstracción reciba el mensaje [state(] \, se guardará el estado
-actual de la abstracción (tener en cuenta que el mensaje se vaciará
-antes de escribir en él);
-#X text 88 159 reconstruye instantáneamente el espectro de la señal
-entrante mediante 16 sinusoides;
+#X text 730 159 donde foo representa una lista de todos los parámetros correctamente formateados para ser enviados de vuelta a la abstracción \, en otras palabras \, conectar esta salida a un mensaje y cuando la abstracción reciba el mensaje [state(] \, se guardará el estado actual de la abstracción (tener en cuenta que el mensaje se vaciará antes de escribir en él);
+#X text 88 159 reconstruye instantáneamente el espectro de la señal entrante mediante 16 sinusoides;
 #X text 100 199 resolución del análisis espectral (1-7);
 #X text 122 228 transposición de las sinusoides (semitonos);
-#X text 116 254 determina el valor máximo del delay \, el cual se
-obtendrá al leer el valor 1 de la tabla de delay (0-5000 ms);
-#X text 164 294 llena la tabla de delay con valores random entre 0
-y 1 (cada ínidce se corresponde con cada una de las 16 sinusoides)
-;
-#X text 151 334 ruta a la tabla de delay (tener en cuenta que si se
-carga un sample personalizado sólo los primeros 16 samples se usarán)
-;
-#X text 157 370 llena la tabla de ganancia con valores random entre
-0 y 1 (cada ínidce se corresponde con cada una de las 16 sinusoides)
-;
-#X text 144 424 ruta a la tabla de ganancia (tener en cuenta que si
-se carga un sample personalizado sólo los primeros 16 samples se usarán)
-;
+#X text 116 254 determina el valor máximo del delay \, el cual se obtendrá al leer el valor 1 de la tabla de delay (0-5000 ms);
+#X text 164 294 llena la tabla de delay con valores random entre 0 y 1 (cada ínidce se corresponde con cada una de las 16 sinusoides);
+#X text 151 334 ruta a la tabla de delay (tener en cuenta que si se carga un sample personalizado sólo los primeros 16 samples se usarán);
+#X text 157 370 llena la tabla de ganancia con valores random entre 0 y 1 (cada ínidce se corresponde con cada una de las 16 sinusoides);
+#X text 144 424 ruta a la tabla de ganancia (tener en cuenta que si se carga un sample personalizado sólo los primeros 16 samples se usarán);
 #X text 45 478 ***donde N representa gain \, pitch o delay***;
-#X text 122 499 tiempo de interpolación entre valores anteriores y
-actuales del parámetro N para cada sinusoide;
+#X text 122 499 tiempo de interpolación entre valores anteriores y actuales del parámetro N para cada sinusoide;
 #X connect 8 0 12 0;
 #X connect 10 0 15 0;
 #X connect 11 0 14 0;
@@ -1830,14 +1787,20 @@ actuales del parámetro N para cada sinusoide;
 #X connect 15 0 11 0;
 #X connect 16 0 8 0;
 #X restore 1267 638 pd help;
-#X obj 201 150 cnv 14 85 14 empty \$0-text empty 20 12 0 14 -262144
--1 0;
-#X obj 201 146 nbx 4 15 1 5000 0 0 \$0-delay-max \$0-delay-max-r delay
-49 8 0 10 -1 -262144 -1 1 256;
-#X text 941 575 abstracción basada en el objeto sigmund~ para la reconstrucción
-de un espectro frecuencial utilizando 16 sinusoides \; \; dylan martin
-;
+#X obj 201 150 cnv 14 85 14 empty \$0-text empty 20 12 0 14 #fcfcfc #000000 0;
+#X obj 201 146 nbx 4 15 1 5000 0 0 \$0-delay-max \$0-delay-max-r delay 49 8 0 10 #000000 #fcfcfc #000000 0 256;
+#X text 941 575 abstracción basada en el objeto sigmund~ para la reconstrucción de un espectro frecuencial utilizando 16 sinusoides \; \; dylan martin;
 #X obj 417 112 expr round($f1);
+#X obj 851 354 loadbang;
+#X obj 851 378 delay 100;
+#X obj 851 426 tabread \$0-gains;
+#X msg 851 402 0;
+#X obj 851 450 tabwrite \$0-gains 0;
+#X obj 1005 354 loadbang;
+#X obj 1005 378 delay 100;
+#X msg 1005 402 0;
+#X obj 1005 426 tabread \$0-delay-tab;
+#X obj 1005 450 tabwrite \$0-delay-tab 0;
 #X connect 0 0 21 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -1876,4 +1839,12 @@ de un espectro frecuencial utilizando 16 sinusoides \; \; dylan martin
 #X connect 56 0 41 0;
 #X connect 57 0 10 0;
 #X connect 62 0 4 0;
+#X connect 63 0 64 0;
+#X connect 64 0 66 0;
+#X connect 65 0 67 0;
+#X connect 66 0 65 0;
+#X connect 68 0 69 0;
+#X connect 69 0 70 0;
+#X connect 70 0 71 0;
+#X connect 71 0 72 0;
 #X coords 0 -1 1 1 197 153 2 100 97;
